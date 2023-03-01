@@ -178,25 +178,7 @@ def CheckMem(InitMem):
 """
 if __name__ == '__main__':
 
-    process = ["./001-emmc-test.sh mmcblk0p1 1M 512", "./001-sd-card-storage-test.sh mmcblk1p1 1M 512",
-               "./001-qspi-test.sh mtd0 1M 32", "./host_app -l", "./host_app -y", "./host_app -m", "./001-crypto.sh",
-               "ocl_unit_test", "rgx_triangle_test -offscr -pb 8192 -pbmax 8192 -tpf 50 -f 2500", "./host_app -v"
-               "rgx_triangle_test -offscr -f 2500 -b -tpf 1000", "pvr_mutex_perf_test_mx", "./sdio1.sh"
-               "rgx_triangle_test -tpfr -tpf 2500 -ts 5 -seed 81576 -f 5000",
-               "rgx_triangle_test -offscr -tpfr -tpf 2500 -ts 5 -seed 81576 -f 5000",
-               "rgx_triangle_test -offscr -tpfr -tpf 2500 -ts 5 -seed 81576 -f 5000",
-               "rgx_compute_test -f 5000 -i 500", "rgx_compute_test -f 5000 -i 3500 -w 4000 -s 3000 -k 1",
-               "rgx_compute_test -f 5000 -i 150 -w 150", "rgx_compute_test -f 5000",
-               "rgx_compute_test -w 1280 -s 1024 -k 8 -i 4096", "pvr_memory_test",
-               "rgx_kicksync_test -n 50000 -ndvcmd 4 -r -seed 81576",
-               "rgx_kicksync_test -n 50000 -loop 24000 -r -seed 81576",
-               "rgx_kicksync_test -ver -nc 16 -ndvctx 32 -ndvcmd 8 -loop 100 -n 100 -r -seed 81576", "ocl_extended_test",
-               "pvr_mutex_perf_test_mx", "rgx_compute_test -f 5000 -i 500",
-               "./jpg_enc_test --input=outI420_qcif_inI420_2k.cfg --output=./outI420_qcif_inI420_2k.mjpeg"
-               " --cfg-dir=./cfg/ --yuv-dir=./yuv/",
-               "./jpg_dec_test --input=./2k_10frames.mjpeg --output=./2k_10frames_enc.yuv --bs-size=16777216",
-               "./w5_enc_test --codec=0 --input=./4k_60fps_10bit.yuv --output=./decoded_10bit2.h264"
-               " --cfgFileName=./avc_uhd_cavlc_8b_04.cfg --srcFormat=2"]
+    process = ["lsusb", "dmesg"]
 
     threads = []
 
